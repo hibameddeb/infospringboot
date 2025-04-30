@@ -1,0 +1,45 @@
+<div th:fragment="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNavbar">
+    <div class="container">
+      <!-- Branding link -->
+      <a class="navbar-brand" th:href="@{/}">Student Portal</a>
+
+      <!-- Navbar toggle for mobile views -->
+      <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/students}">Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/students/new}">Add Student</a>
+          </li>
+        </ul>
+
+        <!-- Search form -->
+        <form th:action="@{/searchstudent}" method="get" class="d-flex mb-3 me-3">
+          <input type="text" name="name" th:value="${name}" placeholder="Search by name" class="form-control me-2" />
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <!-- Dark Mode Toggle Button -->
+        <button id="toggleDarkMode" class="btn btn-outline-light">Dark Mode</button>
+      </div>
+    </div>
+  </nav>
+</div>
